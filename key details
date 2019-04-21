@@ -1,0 +1,41 @@
+
+
+
+/usr/lib/jvm/java-8-oracle/bin/keytool -genkey -v -keystore kls.keystore -keyalg RSA -keysize 2048 -validity 10000 -alias knightDeveloper
+
+
+
+ /usr/lib/jvm/java-8-oracle/bin/keytool -genkey -v -keystore kls.keystore -keyalg RSA -keysize 2048 -validity 10000 -alias knightDeveloper
+Enter keystore password: kls@123 
+Re-enter new password: kls@123
+What is your first and last name?
+  [Unknown]:  Shyam Saini   
+What is the name of your organizational unit?
+  [Unknown]:  Knight Learning Solutions
+What is the name of your organization?
+  [Unknown]:  knight Learning Solution
+What is the name of your City or Locality?
+  [Unknown]:  Noida
+What is the name of your State or Province?
+  [Unknown]:  UP
+What is the two-letter country code for this unit?
+  [Unknown]:  91
+Is CN=Shyam Saini, OU=Knight Learning Solutions, O=knight Learning Solution, L=Noida, ST=UP, C=91 correct?
+  [no]:  y
+
+Generating 2,048 bit RSA key pair and self-signed certificate (SHA256withRSA) with a validity of 10,000 days
+	for: CN=Shyam Saini, OU=Knight Learning Solutions, O=knight Learning Solution, L=Noida, ST=UP, C=91
+Enter key password for <knightDeveloper>
+	(RETURN if same as keystore password):  
+[Storing kls.keystore]
+
+Warning:
+The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore kls.keystore -destkeystore kls.keystore -deststoretype pkcs12".
+
+
+tns build android --release --key-store-path /home/kls102/Documents/smartpathshalaKey/kls.keystore --key-store-password kls@123 --key-store-alias knightDeveloper --key-store-alias-password kls@123
+
+
+keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore -list -v
+tns g c assessment-result /shared/components/assessment
+
